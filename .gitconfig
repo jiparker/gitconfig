@@ -1,0 +1,37 @@
+[color]
+	ui = true
+[user]
+	email = cory.huebner@asolutions.com
+	name = cory.huebner
+[credential]
+	helper = wincred
+
+
+[difftool "codecompare"]
+cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
+renames = true
+ 
+[diff]
+tool = codecompare
+ 
+[mergetool "codecompare"]
+cmd = 'C:\\Program Files\\Devart\\Code Compare\\codemerge.exe' -MF="$LOCAL" -TF="$REMOTE" -BF="$BASE" -RF="$MERGED"
+trustExitCode = true
+ 
+[mergetool]
+keepBackup = false
+ 
+[merge]
+tool = codecompare
+
+[difftool]
+prompt = false
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	put = push origin HEAD
+	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
+	dt = difftool
