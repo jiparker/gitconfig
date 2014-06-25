@@ -5,7 +5,9 @@
 	name = cory.huebner
 [credential]
 	helper = wincred
-
+	
+[core]
+	editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 
 [difftool "codecompare"]
 cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
@@ -35,3 +37,5 @@ prompt = false
 	put = push origin HEAD
 	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
 	dt = difftool
+	pushu = push -u
+	putu = push -u origin HEAD
