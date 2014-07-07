@@ -39,3 +39,4 @@ prompt = false
 	dt = difftool
 	pushu = push -u
 	putu = push -u origin HEAD
+	putqa = push origin HEAD:qa.internal
