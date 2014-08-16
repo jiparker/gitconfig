@@ -120,3 +120,5 @@ PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
 
 # Path updates
 export PATH=${PATH}:/opt/ADT/adt-bundle-linux-x86-20140702/sdk/tools:/opt/ADT/adt-bundle-linux-x86-20140702/sdk/platform-tools
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
