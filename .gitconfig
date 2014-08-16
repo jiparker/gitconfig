@@ -35,5 +35,3 @@ prompt = false
 	pushu = push -u
 	putu = push -u origin HEAD
 	putqa = push origin HEAD:qa.internal
-[core]
-	askpass = /usr/bin/ksshaskpass
