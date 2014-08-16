@@ -11,7 +11,7 @@ cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMO
 renames = true
  
 [diff]
-tool = codecompare
+external = git-meld
  
 [mergetool "codecompare"]
 cmd = 'C:\\Program Files\\Devart\\Code Compare\\codemerge.exe' -MF="$LOCAL" -TF="$REMOTE" -BF="$BASE" -RF="$MERGED"

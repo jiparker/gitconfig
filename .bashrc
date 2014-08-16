@@ -120,6 +120,3 @@ PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
 
 # Path updates
 export PATH=${PATH}:/opt/ADT/adt-bundle-linux-x86-20140702/sdk/tools:/opt/ADT/adt-bundle-linux-x86-20140702/sdk/platform-tools
-export PATH="/usr/local/lib/rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="/usr/local/lib/rbenv/plugins/ruby-build/bind:$PATH"
