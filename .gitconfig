@@ -4,7 +4,7 @@
 	email = cory.huebner@asolutions.com
 	name = cory.huebner
 [credential]
-	helper = wincred
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 [difftool "meld"]
  
