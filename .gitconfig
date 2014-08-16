@@ -4,7 +4,7 @@
 	email = cory.huebner@asolutions.com
 	name = cory.huebner
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+	helper = cache
 
 [difftool "meld"]
  
@@ -35,3 +35,5 @@ prompt = false
 	pushu = push -u
 	putu = push -u origin HEAD
 	putqa = push origin HEAD:qa.internal
+[core]
+	askpass = /usr/bin/ksshaskpass
