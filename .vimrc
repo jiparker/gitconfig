@@ -6,5 +6,4 @@ autocmd FileType ruby compiler ruby
 set nocompatible
 syntax on
 filetype on
-filetype indent on
-filetype plugin on
+filetype indent plugin on
