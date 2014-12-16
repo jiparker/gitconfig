@@ -1,41 +1,51 @@
+[core]
+	editor = nano
+	mergeoptions = --no-edit
+
 [color]
 	ui = true
+
 [user]
-	email = cory.huebner@asolutions.com
 	name = cory.huebner
+	email = cory.huebner@asolutions.com
+
 [credential]
-	helper = wincred
-	
-[core]
-	editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+	helper = !'/home/michael.petter/AppData/Roaming/GitCredStore/git-credential-winstore.exe'
+#	helper = cache --timeout=86400
+
+[push]
+	default = upstream
 
 [difftool "codecompare"]
-cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
-renames = true
+	cmd = '/c/Program Files/Devart/Code Compare/CodeCompare.exe' \"$(cygpath -w \"$LOCAL\")\" \"$(cygpath -w \"$REMOTE\")\"
+	renames = true
  
 [diff]
-tool = codecompare
+	tool = codecompare
  
 [mergetool "codecompare"]
-cmd = 'C:\\Program Files\\Devart\\Code Compare\\codemerge.exe' -MF="$LOCAL" -TF="$REMOTE" -BF="$BASE" -RF="$MERGED"
-trustExitCode = true
+	cmd = '/c/Program Files/Devart/Code Compare/CodeMerge.exe' -MF=\"$(cygpath -w \"$LOCAL\")\" -TF=\"$(cygpath -w \"$REMOTE\")\" -BF=\"$(cygpath -w \"$BASE\")\" -RF=\"$(cygpath -w \"$MERGED\")\"
+	trustExitCode = true
  
 [mergetool]
-keepBackup = false
+	keepBackup = false
  
 [merge]
-tool = codecompare
+	tool = codecompare
 
 [difftool]
-prompt = false
-
+	prompt = false
+	
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
-	put = push origin HEAD
+	rhl = reset --hard head
 	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
+	put = push origin HEAD
 	dt = difftool
-	pushu = push -u
-	putu = push -u origin HEAD
+	deletebr = !sh -c 'git push origin :$1 && git branch -D $1' -
+
+[http]
+	sslVerify = false
