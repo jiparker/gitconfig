@@ -4,3 +4,4 @@
 # Except these files
 !.gitignore
 !.gitconfig
+!*Microsoft.PowerShell_profile.ps1
