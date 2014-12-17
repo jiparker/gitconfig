@@ -5,4 +5,7 @@
 !.gitignore
 !.gitconfig
 !*.poshgit*
-!WindowsPowerShell/
+!Microsoft.PowerShell_profile.ps1
+
+!Documents/
+!Documents/WindowsPowerShell/
