@@ -26,3 +26,29 @@ function runDeltas($deltaDirectory=".", $minDelta=0, $maxDelta=99999, $dbName="T
 		}
 	}	
 }
+
+# Functions
+
+function mm() {
+	cd /Projects/MediaManager
+}
+
+function tms() {
+	cd /Projects/bw.training-management
+}
+
+#function setupMM() {
+#	$currentDirectory = $PWD
+#	
+#	mm()
+#	.\build.asynchrony.notests.ps1
+#	.\deploy.asynchrony.TMS.DEV.ps1
+#}
+#
+#function setupTMS() {
+#
+#}
+#
+#function deployCases() {
+#
+#}

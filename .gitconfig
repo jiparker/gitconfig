@@ -7,8 +7,11 @@
 	helper = wincred
 
 [difftool "codecompare"]
-cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
-renames = true
+  cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
+  renames = true
+
+[difftool "tortoise"]
+  cmd = \""c:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -mine:"$LOCAL" -base:"$REMOTE"
  
 [diff]
 tool = codecompare
@@ -16,6 +19,9 @@ tool = codecompare
 [mergetool "codecompare"]
 cmd = 'C:\\Program Files\\Devart\\Code Compare\\codemerge.exe' -MF="$LOCAL" -TF="$REMOTE" -BF="$BASE" -RF="$MERGED"
 trustExitCode = true
+
+[mergetool "tortoise"]
+    cmd = \"C:/Program Files/TortoiseSVN/bin/TortoiseMerge.exe\" -base:\"$BASE\" -theirs:\"$REMOTE\" -mine:\"$LOCAL\" -merged:\"$MERGED\"
  
 [mergetool]
 keepBackup = false
