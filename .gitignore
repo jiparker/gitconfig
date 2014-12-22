@@ -9,3 +9,5 @@
 
 !Documents/
 !Documents/WindowsPowerShell/
+!Documents/WindowsPowerShell/Autoload
+!Documents/WindowsPowerShell/Autoload/*
