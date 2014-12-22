@@ -32,16 +32,3 @@ function np {
 
 	& "/Program Files (x86)/Notepad++/notepad++" $filename
 }
-
-function gs {
-	git status
-}
-
-function tgl {
-	param(
-		[string] $path = ".",
-		[string] $commitId
-	)
-
-	tgit log "$path" /endrev:$commitId
-}
