@@ -1,8 +1,5 @@
 [color]
 	ui = true
-[user]
-	email = cory.huebner@asolutions.com
-	name = cory.huebner
 [credential]
 	helper = wincred
 
