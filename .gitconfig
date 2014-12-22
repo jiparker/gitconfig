@@ -43,3 +43,4 @@ prompt = false
 	pushu = push -u
 	putu = push -u origin HEAD
 	putqa = push origin HEAD:qa.internal
+	deletebr = !sh -c 'git push origin :$1 && git branch -D $1' -
