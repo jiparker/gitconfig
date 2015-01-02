@@ -11,3 +11,6 @@
 !Documents/WindowsPowerShell/
 !Documents/WindowsPowerShell/Autoload
 !Documents/WindowsPowerShell/Autoload/*
+
+!gitconfig/
+!gitconfig/install-profile.ps1
