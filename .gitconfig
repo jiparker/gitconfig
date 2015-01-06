@@ -2,6 +2,13 @@
 	ui = true
 [credential]
 	helper = wincred
+	
+[user]
+	name = Cory Huebner
+	email = cory.huebner@asynchrony.com
+	
+[push]
+	default = current
 
 [difftool "codecompare"]
   cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"

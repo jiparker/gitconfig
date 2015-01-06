@@ -29,7 +29,7 @@ function Invoke-CaseSetup {
 		[string] $environment = "localhost"
 	)
 	
-	$currentDirectory = $Pwd
+	$startDirectory = $Pwd
 
 	cases
 
@@ -39,15 +39,18 @@ function Invoke-CaseSetup {
 
 	./build.ps1 $environment
 	
-	cd $Pwd
+	cd $startDirectory
 }
 
 function Invoke-TmsSetup {
 	param(
 		[string] $branch,
-		[switch] $deploy
+		[switch] $deploy,
+		[switch] $withCases = $true,
+		[string] $caseEnvironment = 'localhost'
 	)
-
+	
+	$startDirectory = $Pwd
 	tms
 
 	if ($branch) {
@@ -61,6 +64,12 @@ function Invoke-TmsSetup {
 	else {
 		./build.asynchrony.dev.db.cmd
 	}
+	
+	if ($withCases) {
+		Invoke-CaseSetup -environment $caseEnvironment
+	}
+	
+	cd $startDirectory
 }
 
 function Invoke-MediaManagerSetup {
@@ -68,14 +77,17 @@ function Invoke-MediaManagerSetup {
 		[string] $branch
 	)
 
+	$startDirectory = $Pwd
 	mm
 
 	if ($branch) {
 		Reset-Branch -branch $branch
 	}
 
-	./build.asynchrony.notest.cmd
+	./build.asynchrony.notests.ps1
 	./deploy.asynchrony.cmd
+	
+	cd $startDirectory
 }
 
 function Invoke-AllSetup {
