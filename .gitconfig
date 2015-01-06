@@ -1,0 +1,49 @@
+[core]
+	editor = vi
+
+[color]
+	ui = true
+
+[user]
+	name = jim.parker
+	email = jim.parker@asolutions.com
+
+[credential]
+	helper = !'/home/jim.parker/AppData/Roaming/GitCredStore/git-credential-winstore.exe'
+#	helper = cache --timeout=86400
+
+[push]
+	default = upstream
+
+[difftool "codecompare"]
+	cmd = '/c/Program Files/Devart/Code Compare/CodeCompare.exe' \"$(cygpath -w \"$LOCAL\")\" \"$(cygpath -w \"$REMOTE\")\"
+	renames = true
+ 
+[diff]
+	tool = codecompare
+ 
+[mergetool "codecompare"]
+	cmd = '/c/Program Files/Devart/Code Compare/CodeMerge.exe' -MF=\"$(cygpath -w \"$LOCAL\")\" -TF=\"$(cygpath -w \"$REMOTE\")\" -BF=\"$(cygpath -w \"$BASE\")\" -RF=\"$(cygpath -w \"$MERGED\")\"
+	trustExitCode = true
+ 
+[mergetool]
+	keepBackup = false
+ 
+[merge]
+	tool = codecompare
+
+[difftool]
+	prompt = false
+	
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	rhl = reset --hard head
+	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
+	dt = difftool
+	put = push origin HEAD
+
+[http]
+	sslVerify = false

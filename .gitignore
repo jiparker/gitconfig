@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Except these files
+!.gitignore
+!.gitconfig
+!*.poshgit*
+!Microsoft.PowerShell_profile.ps1
+!install-profile.ps1
+
+!Documents/
+!Documents/WindowsPowerShell/
+!Documents/WindowsPowerShell/Autoload
+!Documents/WindowsPowerShell/Autoload/*
