@@ -1,4 +1,8 @@
-﻿
 # Load posh-git example profile
-. 'C:\Projects\posh-git\profile.example.ps1'
+. "$HOME\.poshgit-profile.ps1"
 
+# Load all "auto-load" scripts if the autoload directory exists
+if (Test-Path -Path "~/Documents\WindowsPowerShell\Autoload") {
+	$autoLoadDirectory = "~/Documents\WindowsPowerShell\Autoload"
+	Get-ChildItem "$autoLoadDirectory" | %{. $_.FullName}
+}

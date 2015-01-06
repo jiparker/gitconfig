@@ -1,6 +1,3 @@
-[core]
-	editor = vi
-
 [color]
 	ui = true
 
@@ -9,18 +6,20 @@
 	email = jim.parker@asolutions.com
 
 [credential]
-	helper = !'/home/jim.parker/AppData/Roaming/GitCredStore/git-credential-winstore.exe'
-#	helper = cache --timeout=86400
+	helper = wincreder = cache --timeout=86400
 
 [push]
 	default = upstream
 
 [difftool "codecompare"]
-	cmd = '/c/Program Files/Devart/Code Compare/CodeCompare.exe' \"$(cygpath -w \"$LOCAL\")\" \"$(cygpath -w \"$REMOTE\")\"
-	renames = true
+  cmd = 'C:\\Program Files\\Devart\\Code Compare\\codecompare.exe' "$LOCAL" "$REMOTE"
+  renames = true
+
+[difftool "tortoise"]
+  cmd = \""c:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -mine:"$LOCAL" -base:"$REMOTE"
  
 [diff]
-	tool = codecompare
+tool = codecompare
  
 [mergetool "codecompare"]
 	cmd = '/c/Program Files/Devart/Code Compare/CodeMerge.exe' -MF=\"$(cygpath -w \"$LOCAL\")\" -TF=\"$(cygpath -w \"$REMOTE\")\" -BF=\"$(cygpath -w \"$BASE\")\" -RF=\"$(cygpath -w \"$MERGED\")\"
@@ -34,16 +33,22 @@
 
 [difftool]
 	prompt = false
-	
+
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
-	rhl = reset --hard head
+
 	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
 	dt = difftool
 	put = push origin HEAD
-
+	rhu = !git reset --hard $(git rev-parse --symbolic-full-name @{u})
+	dt = difftool
+	pushu = push -u
+	putu = push -u origin HEAD
+	putqa = push origin HEAD:qa.internal
+	deletebr = !sh -c 'git push origin :$1 && git branch -D $1' -
+	
 [http]
 	sslVerify = false
